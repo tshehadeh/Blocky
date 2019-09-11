@@ -1,0 +1,18 @@
+class Bplatform{
+  PVector pos;
+  Bplatform(float x, float y){
+    pos = new PVector(x,y);
+    
+  }
+  void show(){
+    stroke(0,255,0);
+    strokeWeight(5);
+    line(pos.x,pos.y,pos.x+100,pos.y);
+  }
+  boolean collide(PVector Bp){
+    if(Bp.x > pos.x && Bp.y > pos.y && Bp.x < pos.x+100 && Bp.y < pos.y+30){
+      return true;
+    }
+    return false;
+  }
+}
